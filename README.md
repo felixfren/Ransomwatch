@@ -9,3 +9,7 @@ https://drive.google.com/file/d/1U14qAPDgj6OM2d5g-kuA5PXYLG2oLcTF/view?usp=drive
 File Program untuk Sistem Operasi Linux : 
 
 https://drive.google.com/file/d/1U14qAPDgj6OM2d5g-kuA5PXYLG2oLcTF/view?usp=drive_link
+
+File Ransomware (Hati - Hati) untuk Pengujian:
+
+https://github.com/kh4sh3i/Ransomware-Samples
