@@ -20,13 +20,9 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 #dependency model untuk input
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
-from tensorflow import keras
+#from tensorflow import keras
 import pandas as pd
 import numpy as np
-
-####   TO DO:
-#### 1. AUTO UPDATE TOP TALKERS EVERY 10S <<<
-#### 2. TABLE CLICK EVENT TO BLOCK & UNBLOCK SRC IP WITH NETSH OR IPTABLES (LINUX COMPATIBILITY) 50%, sisa handle blocknya
 
 gray = "#EBEBEB"
 dark1 = "#A3A3A3"
@@ -47,10 +43,7 @@ salem = "#0c955a"
 customtkinter.set_appearance_mode("Light")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme("green")  # Themes: "blue" (standard), "green", "dark-blue"
 
-rf_pe = joblib.load('rf_lstm.pkl')
-scaler = joblib.load('scaler.pkl') 
-pca = joblib.load('pca.pkl')
-lstm_model = keras.models.load_model('lstm_model.keras')
+
 
 
 
@@ -59,6 +52,25 @@ t = None
 talkers_data = {}
 talkers_interfaces = []
 
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+def get_file(file_path):
+    file_path = resource_path(file_path)
+    return file_path
+
+rf_pe = joblib.load(get_file('rf_pca.pkl'))
+scaler = joblib.load(get_file('scaler.pkl')) 
+pca = joblib.load(get_file('pca.pkl'))
+#lstm_model = keras.models.load_model(get_file('lstm_model.keras'))
+mainicon = get_file('mainicon.png')
 
 def get_system_info():
     # Function untuk mengambil informasi sistem perangkat dengan library: 
@@ -155,11 +167,10 @@ def process_packet(packet,q, app):
                 print(X_scaled)
                 X_pca_new = pca.transform(X_scaled)
                 print(X_pca_new)
-                X_lstm_new = X_pca_new.reshape((X_pca_new.shape[0], 1, X_pca_new.shape[1]))
-                lstm_features_new = lstm_model.predict(X_lstm_new)
-                print(lstm_features_new)
-               
-                pe_prediction = rf_pe.predict(lstm_features_new)
+                #X_lstm_new = X_pca_new.reshape((X_pca_new.shape[0], 1, X_pca_new.shape[1]))
+                #lstm_features_new = lstm_model.predict(X_lstm_new)
+                #print(lstm_features_new)
+                pe_prediction = rf_pe.predict(X_pca_new)
                 print(pe_prediction)
                 # Send notification with the ransomware family
                 if pe_prediction[0] == 0:
@@ -266,7 +277,7 @@ class App(customtkinter.CTk):
         self.logo_label = customtkinter.CTkLabel(self.sidenav_frame, text="RansomWatch", font=customtkinter.CTkFont(size=16, weight="bold"), text_color=white)
         self.logo_label.pack(pady=5)
 
-        logo_image = customtkinter.CTkImage(Image.open("mainicon.png"), size=(156,120))
+        logo_image = customtkinter.CTkImage(Image.open(mainicon), size=(156,120))
         self.image_label = customtkinter.CTkLabel(self.sidebar_frame, image=logo_image, text="")
         self.image_label.grid(row=1, column=0,pady=(10,10))
 
