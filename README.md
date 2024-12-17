@@ -4,6 +4,7 @@ Skripsi Sistem Pendeteksian Ransomware dengan Algoritma Random Forest
 File Goodware untuk pengujian dapat diunduh pada folder Goodwares.
 
 File Ransomware (Hati - Hati) untuk Pengujian:
+
 https://github.com/kh4sh3i/Ransomware-Samples
 
 
