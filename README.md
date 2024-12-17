@@ -16,6 +16,10 @@ File Ransomware (Hati - Hati) untuk Pengujian:
 
 https://github.com/kh4sh3i/Ransomware-Samples
 
-CARA MENJALANKAN APLIKASI:
-1. Download Ransomwatch.exe
-2. Jalankan dengan elevated privileges (administrator untuk windows dan root untuk linux)
+CARA MENJALANKAN APLIKASI (Windows):
+1. Download File EXE sesuai dengan sistem operasi yang dimiliki.
+2. Klik kanan pada file EXE dan run as administrator.
+
+CARA MENJALANKAN APLIKASI (Linux):
+1. Download File EXE sesuai dengan sistem operasi yang dimiliki.
+2. Jalankan aplikasi dengan cara sudo <Folder File>/Ransomwatch_Linux
