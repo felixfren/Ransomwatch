@@ -1,25 +1,22 @@
 # Skripsi
 Skripsi Sistem Pendeteksian Ransomware dengan Algoritma Random Forest
 
-File Program (EXE) untuk Sistem Operasi Windows : 
-
-https://drive.google.com/file/d/1U14qAPDgj6OM2d5g-kuA5PXYLG2oLcTF/view?usp=drive_link
-
-
-File Program untuk Sistem Operasi Linux : 
-
-https://drive.google.com/file/d/1U14qAPDgj6OM2d5g-kuA5PXYLG2oLcTF/view?usp=drive_link
-
 File Goodware untuk pengujian dapat diunduh pada folder Goodwares.
 
 File Ransomware (Hati - Hati) untuk Pengujian:
-
 https://github.com/kh4sh3i/Ransomware-Samples
 
-CARA MENJALANKAN APLIKASI (Windows):
+
+**Cara Menjalankan Aplikasi:**
+
+(Windows)
+
+https://drive.google.com/file/d/13FNgLHytSPWZoGFovyp0WI7h0CFwhKp9/view?usp=sharing
 1. Download File EXE sesuai dengan sistem operasi yang dimiliki.
 2. Klik kanan pada file EXE dan run as administrator.
 
-CARA MENJALANKAN APLIKASI (Linux):
-1. Download File EXE sesuai dengan sistem operasi yang dimiliki.
+(Linux)
+
+https://drive.google.com/file/d/1nKoGslxtelWkhey7_lUOFbbhecZhu1xZ/view?usp=sharing
+1. Download File sesuai dengan sistem operasi yang dimiliki.
 2. Jalankan aplikasi dengan cara sudo <Folder File>/Ransomwatch_Linux
